@@ -1,0 +1,20 @@
+[
+    {
+        "name": "happy login",
+        "data": [
+            {
+                "login": "qamid@qamid.ru",
+                "pass": "qamid"
+            }
+        ]
+    },
+    {
+      "name": "sad login",
+      "data": [
+        {
+          "login": "qamid@qamid.ru",
+          "pass": "qamid;"
+        }
+      ]
+    }
+]
