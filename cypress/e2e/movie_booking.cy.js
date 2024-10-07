@@ -4,10 +4,7 @@ import login_admin from "../fixtures/login_admin.json";
 import selectors from "../fixtures/selectors.json";
 
 describe('Бронирование билетов', () => {
-  /*beforeEach(() => {
-    cy.visit("/");
-  })*/
-
+  
   it("Главная страница отображается корректно", () => {
     cy.visit("/");
     cy.get(selectors.class_days).should("have.length", 7);
@@ -25,7 +22,11 @@ describe('Бронирование билетов', () => {
         cy.get(selectors.admin_email).type(login.login);
         cy.get(selectors.admin_pass).type(login.pass);
         cy.get(selectors.admin_login_button).click();
-        cy.contains("Администраторррская").should("be.visible");
+        if (test.name == "happy login") {
+          cy.contains("Администраторррская").should("be.visible");
+        } else {
+          cy.contains("Ошибка авторизации!").should("be.visible");
+        }
       });
     });
   })
@@ -149,24 +150,7 @@ describe('Бронирование билетов', () => {
             });
           });
         });
-        
-
-        
-          
-          
-
-          
-
-          
       })
-      
-      
-
-      
-      
-      
-
-      
     });
   });
 })
